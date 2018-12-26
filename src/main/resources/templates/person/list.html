@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>List</title>
+</head>
+<body>
+<ul>
+    <li th:each="p:${persons}">
+        id:<span th:text="${p.id}"></span> name:<span th:text="${p.name}"></span>
+        age:<span th:text="${p.age}"></span>
+    </li>
+</ul>
+
+<div th:insert="footer::footer1">
+</div>
+
+<div th:replace="footer::footer2">
+</div>
+
+<div th:include="footer::footer3">
+</div>
+</body>
+</html>
