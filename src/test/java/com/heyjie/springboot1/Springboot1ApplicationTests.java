@@ -1,5 +1,6 @@
 package com.heyjie.springboot1;
 
+import com.heyjie.springboot1.config.HeyjieConfig;
 import com.heyjie.springboot1.model.Person;
 import com.heyjie.springboot1.repository.PersonRepository;
 import org.junit.Test;
@@ -15,6 +16,8 @@ import java.util.List;
 public class Springboot1ApplicationTests {
 	@Autowired
 	PersonRepository personRepository;
+	@Autowired
+	HeyjieConfig heyjieConfig;
 
 	@Test
 	public void contextLoads() {
@@ -22,5 +25,10 @@ public class Springboot1ApplicationTests {
 		System.out.println(persons);
 	}
 
+	@Test
+	public void config() {
+		System.out.println(heyjieConfig.getUsername());
+		System.out.println(heyjieConfig.getPassword());
+	}
 }
 
