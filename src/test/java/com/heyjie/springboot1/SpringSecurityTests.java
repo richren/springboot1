@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Optional;
@@ -22,6 +23,13 @@ public class SpringSecurityTests {
         for(GrantedAuthority ga :userOptional.get().getAuthorities()){
             System.out.println(ga.getAuthority());
         }
+    }
 
+    @Test
+    public void Test2_BCryptPasswordEncoder(){
+        BCryptPasswordEncoder bce=new BCryptPasswordEncoder();
+        System.out.println(bce.encode("123"));
+        System.out.println(bce.encode("123"));
+        System.out.println(bce.encode("123"));
     }
 }
