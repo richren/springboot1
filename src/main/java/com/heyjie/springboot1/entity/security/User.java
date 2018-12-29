@@ -1,4 +1,4 @@
-package com.heyjie.springboot1.model.security;
+package com.heyjie.springboot1.entity.security;
 
 import java.util.Collection;
 import java.util.LinkedList;

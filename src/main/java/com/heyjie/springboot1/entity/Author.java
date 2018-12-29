@@ -1,4 +1,4 @@
-package com.heyjie.springboot1.model;
+package com.heyjie.springboot1.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;

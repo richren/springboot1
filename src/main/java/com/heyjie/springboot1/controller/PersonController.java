@@ -2,7 +2,7 @@ package com.heyjie.springboot1.controller;
 
 import java.util.List;
 
-import com.heyjie.springboot1.model.Person;
+import com.heyjie.springboot1.entity.Person;
 import com.heyjie.springboot1.repository.PersonRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,31 +21,27 @@ public class PersonController {
         this.personRepository = personRepository;
     }
 
-    @RequestMapping(value="/list")
-    public String list(Model model)
-    {
+    @RequestMapping(value = "/list")
+    public String list(Model model) {
         List<Person> persons = personRepository.findAll();
         model.addAttribute("persons", persons);//model中放的数据可以在视图页面中获取到
         return "person/list";
     }
 
-    @RequestMapping(value="/addnew",method=RequestMethod.GET)
-    public String addnew()
-    {
+    @RequestMapping(value = "/addnew", method = RequestMethod.GET)
+    public String addnew() {
         return "person/addnew";
     }
 
-    @RequestMapping(value="/addnew",method=RequestMethod.POST)
-    public String addnew(Person person)
-    {
+    @RequestMapping(value = "/addnew", method = RequestMethod.POST)
+    public String addnew(Person person) {
         personRepository.save(person);
         return "redirect:/person/list";
     }
 
-    @RequestMapping(value="/list/age/{age}",method=RequestMethod.GET)
-    public String listByAge(@PathVariable("age") int age, Model model)
-    {
-        int i=123;
+    @RequestMapping(value = "/list/age/{age}", method = RequestMethod.GET)
+    public String listByAge(@PathVariable("age") int age, Model model) {
+        int i = 123;
         List<Person> persons = personRepository.findByAge(age);
         model.addAttribute("persons", persons);
         return "person/list";

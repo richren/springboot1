@@ -1,7 +1,7 @@
 package com.heyjie.springboot1.repository;
 
-import com.heyjie.springboot1.model.Book;
-import com.heyjie.springboot1.model.BookAuthorInfo;
+import com.heyjie.springboot1.entity.Book;
+import com.heyjie.springboot1.entity.BookAuthorInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 

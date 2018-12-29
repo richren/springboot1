@@ -1,7 +1,8 @@
 package com.heyjie.springboot1;
 
+
 import com.heyjie.springboot1.config.HeyjieConfig;
-import com.heyjie.springboot1.model.Person;
+import com.heyjie.springboot1.entity.Person;
 import com.heyjie.springboot1.repository.PersonRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

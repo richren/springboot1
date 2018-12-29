@@ -1,9 +1,9 @@
 package com.heyjie.springboot1;
 
 
-import com.heyjie.springboot1.model.Author;
-import com.heyjie.springboot1.model.Book;
-import com.heyjie.springboot1.model.BookAuthorInfo;
+import com.heyjie.springboot1.entity.Author;
+import com.heyjie.springboot1.entity.Book;
+import com.heyjie.springboot1.entity.BookAuthorInfo;
 import com.heyjie.springboot1.repository.AuthorRepository;
 import com.heyjie.springboot1.repository.BookRepository;
 import org.junit.Test;

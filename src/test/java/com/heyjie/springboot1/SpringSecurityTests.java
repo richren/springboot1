@@ -1,6 +1,6 @@
 package com.heyjie.springboot1;
 
-import com.heyjie.springboot1.model.security.User;
+import com.heyjie.springboot1.entity.security.User;
 import com.heyjie.springboot1.repository.security.UserRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;

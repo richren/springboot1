@@ -14,7 +14,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @Configuration
@@ -36,11 +35,11 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
 
+        http.csrf().disable();//为了测试RESTful，由此可见spring security还是比较适合企业站，对于RESTful风格的不能用这个。
         //http://blog.csdn.net/u012702547/article/details/54319508
         //authenticated是针对所有已登录用户，permitAll()是所有访问者
         http.authorizeRequests()
             //注意antMatchers的顺序，是从上往下匹配的
-
             //Authority是权限项，Role是角色
             //不要.antMatchers("/**").hasRole("Teacher")。否则请求/favicon.ico、js等都会造成无权限的问题，因此要把需要权限的防到单独的目录路径下
             .antMatchers("/service/**").authenticated()///service/下的要进行权限验证，因此要把MainController等业务系统的Controller配置为@RequestMapping("/service/main") 等
